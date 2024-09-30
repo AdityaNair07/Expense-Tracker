@@ -1,13 +1,19 @@
+import { ADD_TRANSACTIONS, addTransactions } from "./actions";
+
 const initialState = {
-  transactions: [
-    { id: 1, text: "hehe", amount: 10 },
-    { id: 2, text: "hehehe", amount: 15 },
-    { id: 3, text: "hehehehe", amount: 25 },
-  ],
+  transactions: [],
 };
 
 const MyReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case ADD_TRANSACTIONS:
+      return {
+        ...state,
+        transactions: [action.payload, ...state.transactions],
+      };
+    default:
+      return state;
+  }
 };
 
 export default MyReducer;
