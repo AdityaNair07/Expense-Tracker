@@ -34,7 +34,7 @@ const AddTransaction = ({ id, addTransactions }) => {
             id="amount"
             type="number"
             placeholder="Enter amount..."
-            value={amount}
+            // value={amount}
             onChange={(e) => setAmount(e.target.valueAsNumber)}
           />
         </div>
