@@ -7,16 +7,11 @@ const Balance = ({ transactions }) => {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <h2>Your Balance</h2>
-        <h1 id="balance">₹{total}</h1>
+      <div className="flex flex-col items-center justify-center pb-7">
+        <h2 className="text-3xl font-semibold p-3">Your Balance</h2>
+        <h1 id="balance" className="text-4xl font-bold">
+          ₹{total}
+        </h1>
       </div>
     </>
   );
