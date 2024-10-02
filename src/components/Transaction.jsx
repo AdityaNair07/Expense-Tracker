@@ -1,6 +1,6 @@
 import React from "react";
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ transaction, deleteTransactions }) => {
   const sign = transaction.amount >= 0 ? "+" : "-";
   return (
     <div>
@@ -8,6 +8,7 @@ const Transaction = ({ transaction }) => {
       <span>
         {sign}₹{Math.abs(transaction.amount)}
       </span>
+      <button onClick={() => deleteTransactions(transaction.id)}>Delete</button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionList = ({ transactions }) => {
+const TransactionList = ({ transactions, deleteTransactions }) => {
   return (
     <div>
       <h3>Transactions</h3>
@@ -9,7 +9,13 @@ const TransactionList = ({ transactions }) => {
         {transactions.map((transaction) => {
           return (
             <li>
-              <Transaction key={transaction.id} transaction={transaction} />
+              <Transaction
+                key={transaction.id}
+                transaction={transaction}
+                deleteTransactions={(transactionID) =>
+                  deleteTransactions(transactionID)
+                }
+              />
             </li>
           );
         })}
